@@ -8,22 +8,22 @@ class RingBuffer:
         self.storage = DoublyLinkedList()
 
     def append(self, item):
-        if self.storage.length == 4:
+        if self.storage.length == self.capacity - 1:
             self.storage.add_to_tail(item)
             self.current = 'pass'
-        elif self.storage.length < 4:
+        elif self.storage.length < self.capacity - 1:
             self.storage.add_to_tail(item)
             self.current = self.storage.tail 
 
-        elif self.storage.length == 5 and self.current is 'pass':
+        elif self.storage.length == self.capacity and self.current is 'pass':
            
             self.storage.head.value = item
             self.current = self.storage.head.next
-        elif self.storage.length == 5 and self.current.next is None:
+        elif self.storage.length == self.capacity and self.current.next is None:
             
             self.storage.tail.value = item
             self.current = self.storage.head
-        elif self.storage.length == 5:
+        elif self.storage.length == self.capacity:
             
             self.storage.replace(self.current, item)
             self.current = self.current.next
