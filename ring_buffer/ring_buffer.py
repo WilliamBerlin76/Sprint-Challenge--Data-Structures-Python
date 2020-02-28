@@ -16,19 +16,15 @@ class RingBuffer:
             self.current = self.storage.tail 
 
         elif self.storage.length == 5 and self.current is 'pass':
-            # self.storage.delete(self.storage.head)
-            # self.storage.add_to_head(item)
+           
             self.storage.head.value = item
             self.current = self.storage.head.next
         elif self.storage.length == 5 and self.current.next is None:
+            
             self.storage.tail.value = item
             self.current = self.storage.head
         elif self.storage.length == 5:
-            # self.current = self.current.next
-            # temp = self.storage.head
-            # while temp is not None:
-            #     if temp == self.current:
-            #         self.storage()
+            
             self.storage.replace(self.current, item)
             self.current = self.current.next
 

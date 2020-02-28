@@ -130,16 +130,6 @@ class DoublyLinkedList:
     
     def replace(self, node, replacement):
         
-        # if self.head is node:
-        #     temp = self.head
-        #     self.head = ListNode(replacement, temp.prev, temp.next)
-        # elif self.tail is node:
-        #     temp = self.tail
-        #     self.tail = ListNode(replacement, temp.prev, temp.next)
-        #     node.delete()
-        # else:
-        #     temp = self.head
-        #     while temp is not None:
         node.replace(replacement)
 
 
