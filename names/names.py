@@ -82,22 +82,14 @@ duplicates = []  # Return the list of duplicates in this data structure
 
 #-- stretch for python collections only --
 # name_store = [i for i in names_1]
-# duplicates = [i for i in names_2 if i in names_1]
-
-# # def b_search(target, arr):
-# #     mid = len(arr) // 2
-# #     print(target)
-# #     if target == arr[mid] or target == arr[0]:
-# #         duplicates.append(target)
-# #         return True
-# #     elif sorted(target) < sorted(arr[-1]) or sorted(target) > sorted(arr[0]):
-# #         return False
-# #     elif sorted(target) < sorted(arr[mid]):
-# #         return b_search(target, arr[:mid])
-# #     elif sorted(target) > sorted(arr[mid]):
-# #         return b_search(target, arr[mid:])
+next_list = [i for i in names_2]
+duplicates = []
+res_set = {i for i in names_1}
+for i in range(len(next_list)):
+    if next_list[i] in res_set:
+        duplicates.append(next_list[i])
 
 
-# end_time = time.time()
-# print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
-# print (f"runtime: {end_time - start_time} seconds")
+end_time = time.time()
+print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
+print (f"runtime: {end_time - start_time} seconds")
