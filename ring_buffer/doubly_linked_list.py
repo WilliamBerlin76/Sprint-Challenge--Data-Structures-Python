@@ -34,6 +34,8 @@ class ListNode:
         if self.next:
             self.next.prev = self.prev
 
+    def replace(self, new_value):
+        self.value = new_value
 
 """Our doubly-linked list class. It holds references to
 the list's head and tail nodes."""
@@ -125,6 +127,11 @@ class DoublyLinkedList:
             node.delete()
         else:
             node.delete()
+    
+    def replace(self, node, replacement):
+        
+        node.replace(replacement)
+
 
     """Returns the highest value currently in the list"""
     def get_max(self):
